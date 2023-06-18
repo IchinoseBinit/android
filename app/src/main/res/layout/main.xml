@@ -47,5 +47,23 @@
         android:layout_height="wrap_content"
         android:text="Get Menu" />
 
+    <Button
+        android:id="@+id/listview_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go To Listview" />
+
+    <Button
+        android:id="@+id/gridview_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go To Gridview" />
+
+    <Button
+        android:id="@+id/recyclerview_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go To Recycler View" />
+
 
 </LinearLayout>

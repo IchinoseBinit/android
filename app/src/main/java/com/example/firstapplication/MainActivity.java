@@ -80,6 +80,36 @@ public class MainActivity extends Activity  {
             }
         });
 
+        Button goToListViewBtn = findViewById(R.id.listview_button);
+
+        goToListViewBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, ListviewActivity.class);
+                startActivity(i);
+            }
+        });
+
+
+        Button goToGridViewBtn = findViewById(R.id.gridview_button);
+
+        goToGridViewBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, GridViewActivity.class);
+                startActivity(i);
+            }
+        });
+
+        Button goToRecyclerViewBtn = findViewById(R.id.recyclerview_button);
+
+        goToRecyclerViewBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, RecyclerViewActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     public void showDialog() {

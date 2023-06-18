@@ -26,6 +26,9 @@
         <activity android:name=".FragmentActivity" />
         <activity android:name=".SecondActivity" />
         <activity android:name=".CalculatorActivity" />
+        <activity android:name=".ListviewActivity" />
+        <activity android:name=".GridViewActivity" />
+        <activity android:name=".RecyclerViewActivity" />
     </application>
 
 </manifest>
