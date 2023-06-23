@@ -110,6 +110,16 @@ public class MainActivity extends Activity  {
                 startActivity(i);
             }
         });
+
+        Button goToDatabaseViewBtn = findViewById(R.id.database_button);
+
+        goToDatabaseViewBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, DatabaseActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     public void showDialog() {

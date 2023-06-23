@@ -2,8 +2,13 @@ package com.example.firstapplication;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -38,6 +43,17 @@ public class ListviewActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.listview);
 
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                System.out.println("Hello world");
+                String toShowTitle = title[position];
+                Log.d("text", toShowTitle);
+
+                Toast.makeText(ListviewActivity.this, toShowTitle, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 }

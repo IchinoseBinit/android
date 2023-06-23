@@ -7,27 +7,24 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class RecyclerDatabaseViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    ArrayList<Item> items;
+    ArrayList<Person> persons;
     Activity context;
 
-    public RecyclerViewAdapter(Activity context, ArrayList<Item> items) {
+    public RecyclerDatabaseViewAdapter(Activity context, ArrayList<Person> persons) {
         this.context = context;
-        this.items = items;
+        this.persons = persons;
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View recyclerListItem = layoutInflater.inflate(R.layout.view_items, parent, false);
+        View recyclerListItem = layoutInflater.inflate(R.layout.view_database_items, parent, false);
         RecyclerView.ViewHolder viewHolder = new RecyclerView.ViewHolder(recyclerListItem) {
         };
         return  viewHolder;
@@ -35,18 +32,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        ImageView img = holder.itemView.findViewById(R.id.image_view);
-        TextView titleView = holder.itemView.findViewById(R.id.title_text);
-        TextView descriptionView = holder.itemView.findViewById(R.id.description_text);
+        TextView idView = holder.itemView.findViewById(R.id.id_text);
+        TextView nameView = holder.itemView.findViewById(R.id.name_text);
+        TextView addressView = holder.itemView.findViewById(R.id.address_text);
 
-        img.setImageResource(items.get(position).getImage());
-        titleView.setText(items.get(position).getTitle());
-        descriptionView.setText(items.get(position).getDescription());
+        idView.setText(String.valueOf(persons.get(position).getId()));
+        nameView.setText(persons.get(position).getName());
+        addressView.setText(persons.get(position).getAddress());
 
     }
 
     @Override
     public int getItemCount() {
-        return items.size();
+        return persons.size();
     }
 }
